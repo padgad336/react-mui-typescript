@@ -5,6 +5,7 @@ This project was bootstrapped with
  [Typescript](https://www.tutorialsteacher.com/typescript).
 
 
+ [Typescript Playgound](https://www.typescriptlang.org/play).
 ### yarn
 
 > [Download](https://yarnpkg.com/en/docs/install)
