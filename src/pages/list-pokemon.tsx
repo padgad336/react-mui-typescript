@@ -1,12 +1,47 @@
-import { Card, CardContent, Typography, Box } from '@mui/material'
+import {  Box,Container, Typography } from '@mui/material'
 import React from 'react'
+import Pokemon from '../components/pokemon'
 // import Pokemon from '../components/pokemon'
-// import pokemonData from '../assets/pokedex.json'
+import pokemonData from '../assets/pokedex.json'
 
-
+type PokemonProps={
+    id: number,
+    name: {
+        english: string,
+        japanese: string,
+        chinese: string,
+        french: string
+    },
+    type: string[],
+    base: {
+        HP: number,
+        Attack: number,
+        Defense: number,
+        "Sp. Attack": number,
+        "Sp. Defense": number,
+        Speed: number
+    },
+    species: string,
+    description: string,
+    evolution?: {
+        next: any[]
+    },
+    profile: {
+        height: string
+        weight: string,
+        egg: string[],
+        ability: any[],
+        gender: string
+    },
+    image: {
+        sprite: string
+        thumbnail: string,
+        hires: string
+    }
+}
 
 const ListPokemon = () => {
-    const beelzebub = {
+    const beelzebub:PokemonProps = {
         id: 1,
         name: {
             english: "Bulbasaur",
@@ -62,9 +97,35 @@ const ListPokemon = () => {
         }
     }
 
+    const pokemonList =pokemonData
     return (
-        <>
-        </>
+        <React.Fragment>
+            <Container maxWidth="lg">
+                <Box sx={{
+                    display:'flex',
+                    justifyContent:'space-between',
+                    alignItems:"center",
+                    flexWrap:'wrap'
+                    }}>
+                    {pokemonList?.map((row)=>{
+                        return(
+                            <Pokemon 
+                            name={row.name.english} 
+                            image={row.image.hires} 
+                            species={row.species}
+                            // type={row.type}
+                            />
+                        )
+                    })}
+                {/* <Pokemon 
+                name={beelzebub.name.english} 
+                image={beelzebub.image.hires} 
+                species={beelzebub.species}
+                type={beelzebub.type}
+                /> */}
+                </Box>
+            </Container>
+        </React.Fragment>
     )
 }
 export default ListPokemon
