@@ -18,6 +18,7 @@ if(!pokemon){
     }
 }
 },[])
+console.log(pokemon)
 return(
     <>
     <Typography variant='h3'>
