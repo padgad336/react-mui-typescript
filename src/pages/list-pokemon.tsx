@@ -1,8 +1,9 @@
 import {  Box,Container, Typography } from '@mui/material'
 import React from 'react'
-import Pokemon from '../components/pokemon'
+
 // import Pokemon from '../components/pokemon'
 import pokemonData from '../assets/pokedex.json'
+import Pokemon from '../components/pokemon'
 
 type PokemonProps={
     id: number,
@@ -113,7 +114,8 @@ const ListPokemon = () => {
                             name={row.name.english} 
                             image={row.image.hires} 
                             species={row.species}
-                            // type={row.type}
+                            type={row.type}
+                            id={row.id}
                             />
                         )
                     })}
