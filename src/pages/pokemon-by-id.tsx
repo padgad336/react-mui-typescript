@@ -1,4 +1,6 @@
 import {
+    Container,
+    Grid,
     Typography
 } from '@mui/material'
 import { useParams } from 'react-router-dom'
@@ -21,9 +23,16 @@ if(!pokemon){
 console.log(pokemon)
 return(
     <>
+    <Container maxWidth="lg">
     <Typography variant='h3'>
         Pokemon Details
     </Typography>
+    <Grid container sx={{width:'100%',height:"100vh"}}>
+        <Grid item md={6} sx={{bgcolor:'tomato'}}>dd</Grid>
+        <Grid item md={6} sx={{bgcolor:'green'}}>dd</Grid>
+
+    </Grid>
+    </Container>
     </>
 )
 }
