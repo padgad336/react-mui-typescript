@@ -28,9 +28,8 @@ return(
         Pokemon Details
     </Typography>
     <Grid container sx={{width:'100%',height:"100vh"}}>
-        <Grid item md={6} sx={{bgcolor:'tomato'}}>dd</Grid>
-        <Grid item md={6} sx={{bgcolor:'green'}}>dd</Grid>
-
+        <Grid item md={6} xs={12} sx={{bgcolor:'tomato'}}>dd</Grid>
+        <Grid item md={6} xs={12} sx={{bgcolor:'green'}}>dd</Grid>
     </Grid>
     </Container>
     </>
