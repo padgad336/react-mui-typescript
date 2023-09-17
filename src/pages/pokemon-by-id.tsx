@@ -1,5 +1,6 @@
 import {
     Box,
+    Chip,
     Container,
     Grid,
     Typography
@@ -29,14 +30,28 @@ return(
         Pokemon Details
     </Typography>
     <Grid container sx={{width:'100%',height:"100vh"}}>
-        <Grid item sm={4} md={4} xs={12} sx={{bgcolor:'tomato'}}>
+        <Grid item sm={4} md={4} xs={12} sx={{}}>
             <Box component={'img'}
             sx={{width:'300px', height:'300px'}}
             src={`${pokemon?.image?.hires}`}
             alt="pokemon-image"
             />
+            
             </Grid>
-        <Grid item sm={8} md={8} xs={12} sx={{bgcolor:'green'}}>dd</Grid>
+        <Grid item sm={8} md={8} xs={12} sx={{}}>
+            <Typography variant='h4'>
+                name:{pokemon?.name?.english}
+            </Typography>
+            <Typography variant='h4'>
+            {pokemon?.name?.japanese}
+            </Typography>
+            {pokemon?.type?.map((t:string)=>(
+            <Chip 
+            color="primary"
+            label={t}
+            size='small' />
+            ))}
+            </Grid>
     </Grid>
     </Container>
     </>
