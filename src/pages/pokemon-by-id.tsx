@@ -7,14 +7,12 @@ import {
 } from '@mui/material'
 import { useParams } from 'react-router-dom'
 import {useEffect, useState} from 'react'
-import axios from 'axios'
 import pokemomData from './../assets/pokedex.json'
 
 const PokemonById =()=>{
 const params =useParams()
 const [pokemon,setPokemon]=useState<any|null>(null)
 const pokemonList =pokemomData
-
 useEffect(()=>{
 if(!pokemon){
     let poke =pokemonList.filter((row)=>`${row?.id}`===`${params?.pokemonId}`)
@@ -23,23 +21,6 @@ if(!pokemon){
         setPokemon(poke[0])
     }
 }
-// const getPokemonDataId=async()=>{
-// // const response=await axios.get(`https://pokeapi.co/api/v2/pokemon/${params?.pokemonId}`)
-// // if(response) setPokemon(response?.data)
-// // axios.post('url/create-pokemon',{
-// //     name:'pikachu',
-// // })
-// axios.get(
-//     `https://pokeapi.co/api/v2/pokemon/${params?.pokemonId}`
-//     ).then(
-//     (response)=>{
-//         if(response) setPokemon(response?.data)
-//     }
-// ).catch((e)=>{
-// console.log("error")
-// })
-// }
-// getPokemonDataId()
 },[])
 console.log(pokemon)
 return(
@@ -59,7 +40,7 @@ return(
             </Grid>
         <Grid item sm={8} md={8} xs={12} sx={{}}>
             <Typography variant='h4'>
-                name:{pokemon?.name}
+                name:{pokemon?.name?.english}
             </Typography>
             <Typography variant='h4'>
             {pokemon?.name?.japanese}
